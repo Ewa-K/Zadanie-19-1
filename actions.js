@@ -14,5 +14,41 @@ function addComment(text) {
     }
 }
 
+function editComment(text) {
+    return {
+        type: EDIT_COMMENT,
+        text,
+        id
+    }
+}
+
+function removeComment(text) {
+    return {
+        type: REMOVE_COMMENT,
+        text,
+        id
+    }
+}
+
+function thumupComment(text) {
+    return {
+        type: THUMB_UP_COMMENT,
+        id,
+        votes
+    }
+}
+
+function thumbdownComment(text) {
+    return {
+        type: THUMB_DOWN_COMMENT,
+        id,
+        votes
+    }
+}
+
 const boundAddComment = text => dispatch(addComment(text));
+const boundRemoveComment = text => dispatch(removeComment(text));
+const boundEditComment = text => dispatch(editComment(text));
+const boundThumupComment = text => dispatch(thumupComment(text));
+const boundThumbdownComment = text => dispatch(thumbdownComment(text));
 
