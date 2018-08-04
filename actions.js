@@ -25,7 +25,6 @@ function editComment(text) {
 function removeComment(text) {
     return {
         type: REMOVE_COMMENT,
-        text,
         id
     }
 }
