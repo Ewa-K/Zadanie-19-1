@@ -14,7 +14,7 @@ function addComment(text) {
     }
 }
 
-function editComment(text) {
+function editComment(text, id) {
     return {
         type: EDIT_COMMENT,
         text,
@@ -22,32 +22,30 @@ function editComment(text) {
     }
 }
 
-function removeComment(text) {
+function removeComment(id) {
     return {
         type: REMOVE_COMMENT,
         id
     }
 }
 
-function thumupComment(text) {
+function thumupComment(id) {
     return {
         type: THUMB_UP_COMMENT,
         id,
-        votes
     }
 }
 
-function thumbdownComment(text) {
+function thumbdownComment(id) {
     return {
         type: THUMB_DOWN_COMMENT,
         id,
-        votes
     }
 }
 
 const boundAddComment = text => dispatch(addComment(text));
-const boundRemoveComment = text => dispatch(removeComment(text));
-const boundEditComment = text => dispatch(editComment(text));
-const boundThumupComment = text => dispatch(thumupComment(text));
-const boundThumbdownComment = text => dispatch(thumbdownComment(text));
+const boundRemoveComment = text => dispatch(removeComment(id));
+const boundEditComment = text => dispatch(editComment(text, id));
+const boundThumupComment = text => dispatch(thumupComment(id));
+const boundThumbdownComment = text => dispatch(thumbdownComment(id));
 
